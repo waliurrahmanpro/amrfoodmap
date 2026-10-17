@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-warm: #FAF8F5;
+    --bg-card: #FFFFFF;
+    --forest-primary: #0C382E;
+    --forest-deep: #06241D;
+    --forest-surface: #13463B;
+    --lime-accent: #84CC16;
+    --lime-light: #ECFCCB;
+    --text-primary: #1C2723;
+    --text-muted: #576560;
+    --border-warm: #E6E1D6;
+  }
+
+  body {
+    background-color: var(--bg-warm);
+    color: var(--text-primary);
+    font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F1EDE4;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5CD;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0C382E;
+}
+
+/* Smooth map animations and SVG interactive effects */
+.district-path {
+  transition: fill 0.25s ease, stroke 0.2s ease, filter 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  outline: none;
+}
+
+.district-path:hover {
+  filter: drop-shadow(0 4px 10px rgba(12, 56, 46, 0.28));
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.85;
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 2.5s infinite ease-in-out;
+}
